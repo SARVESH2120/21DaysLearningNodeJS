@@ -1,1 +1,25 @@
-learning about file system module
+Know about file system module in introduction and basics of JS..
+
+//Starting a NodeJS....
+
+learn a http and https protcol and ssl encryption
+
+core modules of node js http, https, path, fs, os
+
+creating a server with -- simple js fuction --> anoynoumous function --> then arrow function.......
+
+//normal js function
+
+function createServer(req, res){
+
+}
+//anoynoumous function
+
+function (req, res){
+}
+
+//arrow function
+
+(req, res)=>{
+
+}
