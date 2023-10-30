@@ -1,0 +1,17 @@
+Controlling the Node.js Process
+Want to quit your running Node.js server?
+
+You can always do that by pressing CTRL + C in the terminal/ command prompt window where you started your server (i.e. where you ran node app.js).
+
+Headers are metadata, meta information added to a requestand also to response....
+
+res.write --> allows us to write a data to the response
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers(read about headers)
+
+req.on() --> on method allows us to listen certain events
+
+event loop in nodejs??
+
+nodejs uses only single javascript thread  
+a thread is bascically like a process in our operating system
