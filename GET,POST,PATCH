@@ -1,0 +1,76 @@
+const express = require("express");
+const users = require("./MOCK_DATA.json")
+
+const app = express();
+const PORT = 8000;
+
+app.get("/users", (req,res)=>{
+    const html = `
+    <ul>
+    ${users.map((user)=> `<li>${user.first_name}</li>`).join("")}
+    </ul>
+    `;
+    res.send(html);
+})
+
+app.get("/api/users",(req,res)=>{
+    return res.json(users)
+} )
+
+/*
+
+app.get("/api/users/:id" , (req,res)=>{
+    const id =Number(req.params.id);
+    const user = user.find((user)=> user.id === id);
+    return res.json(user);
+})
+
+*/
+
+
+app.route("/api/users/:id").get((req,res)=>{
+        const id = Number(req.params.id);
+        const userDB = users.find((user)=> user.id === id);
+        return res.json(userDB);
+
+        })
+        .patch((req,res)=>{
+            return res.json({status: "pending"})
+        })
+        .delete((req,res)=>{
+            return res.json({status:"pending"})
+        })
+
+
+
+/*
+app.post("/api/users", (req,res)=>{
+
+    return res.json({status: "pending"})
+})
+
+app.patch("/api/users/:id", (req,res)=>{
+    return res.json({status:"pending"})
+})
+
+app.delete("/api/users/:id",(req,res)=>{
+    return res.json({status:"pending"})
+})
+*/
+
+
+app.listen(PORT, ()=> console.log(`Server started at port ${PORT}`))
+
+/*
+REST API - JSON
+
+GET/api/users - List all users
+GET/api/users/1 - Get the user with ID 1
+GET/api/users/2 - Get the user with ID 2
+
+POST/api/users - create new user
+
+PATCH/api/user/1 - Edit the user with ID 1
+
+DELETE/api/ users/1 - Delete the user with ID 1
+*/
